@@ -1,7 +1,7 @@
 t" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Ilham Setia BHakti">
 
-    <title>Tambah Waktu</title>
+    <title>Edit Absen</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?=base_url()?>vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,39 +25,19 @@ t" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!--Section: Minimal statistics cards-->
       <section>
 <!-- General Form Elements -->
-              <form action="<?=site_url('admin/input_waktu_go')?>" method="post">
-                <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Pelajaran</label>
-                  <div class="col-sm-10">
-                    <select name="hari" class="form-select" aria-label="Default select example">
-				    <option selected disabled>Pilih hari...</option>
-					<option value="Senin">Senin</option>
-					<option value="Selasa">Selasa</option>
-					<option value="Rabu">Rabu</option>
-					<option value="Kamis">Kamis</option>
-					<option value="Jumat">Jumat</option>
-					<option value="Sabtu">Sabtu</option>
-					<option value="Minggu">Minggu</option>					
-				  </select>
-                  </div>
-                </div>
+              <form action="<?=site_url('admin/edit_absen_go')?>" method="post">
+				<input name="id_absen" type="hidden" value="<?=$obj_absen->id_absen?>" class="form-control">
 				<div class="row mb-3">
-                  <label for="inputTime" class="col-sm-2 col-form-label">Jam Mulai</label>
+                  <label for="inputTime" class="col-sm-2 col-form-label">Nama Karyawan</label>
                   <div class="col-sm-10">
-                    <input name="jam1" type="time" class="form-control">
+                    <input name="nama_karyawan" type="text" value="<?=$obj_absen->nama_karyawan?>" class="form-control">
                   </div>
                 </div>				
-                <div class="row mb-3">
-                  <label for="inputTime" class="col-sm-2 col-form-label">Jam Selesai</label>
-                  <div class="col-sm-10">
-                    <input name="jam2" type="time" class="form-control">
-                  </div>
-                </div>
 				
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label"></label>
                   <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Buat</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
                   </div>
                 </div>
 

@@ -37,7 +37,28 @@
 
     <main role="main" class="container">
 	  <section class="container mb-5">
+		<div class="card my-4">
+		  <div class="card-header fw-bold">
+			Absen Karyawan
+		  </div>
+		  <div class="card-body">
+			<form method="post" action="<?=site_url('landing/landing_absen_go')?>">
+			  <div class="mb-3">
+				<label class="form-label">Nama</label>
+				<input name="nama_karyawan" required type="text" class="form-control" placeholder="Masukan nama anda..." >	
+			  </div>
+			  <div class="mb-3">
+				<label class="form-label">Lokasi <span class="text-primary" onclick="getLocation()">(Ambil Lokasi)</span></label>
+				<input required readonly name="lokasi" id="lokasi" type="text" class="form-control" placeholder="Klik 'Ambil Lokasi' dahulu" >
+			  </div>			  
+
+			  <button type="submit" class="btn btn-primary">Kirim</button>
+			</form>
+		  </div>
+		</div>
+	  
 		  <div class="mx-auto pt-5">
+			<div class="h2 m-2">Jadwal Shift Karyawan</div>
 			<table class="table table-striped table-hover" id="sortTable" width="100%" cellspacing="0">
 				  <thead class="thead-dark">
 					<tr>
@@ -69,5 +90,23 @@
 		</p>
 	  </div>
 	</footer>
+	
+	<script>
+	const x = document.getElementById("lokasi");
+
+	function getLocation() {
+	  if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	  } else { 
+		x.innerHTML = "Geolocation is not supported by this browser.";
+		alert("BROWSER NOT OK!");
+	  }
+	}
+
+	function showPosition(position) {
+	  console.log("OK");
+	  x.value = position.coords.latitude + "," + position.coords.longitude;
+	}	
+	</script>
     </body>
 </html>

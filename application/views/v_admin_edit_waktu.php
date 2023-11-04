@@ -1,51 +1,58 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+t" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Ilham Setia BHakti">
 
-    <title>Waktu Edit</title>
+    <title>Edit Waktu</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?=base_url()?>css/dashboard.css" rel="stylesheet">
+    <link href="<?=base_url()?>vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- MDB -->
+	<link rel="stylesheet" href="<?=base_url()?>css/mdb.min.css" />
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="<?=base_url()?>css/admin.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
-	<?php $this->load->view('v_admin_comp/nav'); ?>
+	  <div>
+		<?php $this->load->view('component/sidebar.php');?>
+		<?php $this->load->view('component/navbar.php');?>	
 
-    <div class="container-fluid">
-      <div class="row">
-	  <?php $this->load->view('v_admin_comp/side_bar'); ?>
+	  </div>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Waktu Edit</h1>
-          </div>
+<!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+      <!--Section: Minimal statistics cards-->
+      <section>
+<!-- General Form Elements -->
+              <form action="<?=site_url('admin/edit_waktu_go')?>" method="post">
+				<input name="id" type="hidden" value="<?=$id?>" class="form-control">
+				<div class="row mb-3">
+                  <label for="inputTime" class="col-sm-2 col-form-label">Jam Mulai</label>
+                  <div class="col-sm-10">
+                    <input name="hari" type="text" value="<?=$hari?>" class="form-control">
+                  </div>
+                </div>				
+                <div class="row mb-3">
+                  <label for="inputTime" class="col-sm-2 col-form-label">Jam Selesai</label>
+                  <div class="col-sm-10">
+                    <input name="jam" type="text" value="<?=$jam?>" class="form-control">
+                  </div>
+                </div>
+				
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label"></label>
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                  </div>
+                </div>
 
-          <div class="jumbotron">
-            <form action="<?= site_url('admin/edit_waktu_go')?>" method="post">
-            <div class="form-group">
-                <label>id</label>
-                <input class="form-control" type="text" readonly name="id" value="<?=$id?>">
-              </div>
-              <div class="form-group">
-                <label>Hari</label>
-                <input class="form-control" type="text" name="hari" value="<?=$hari?>">
-              </div>
-              <div class="form-group">
-                <label>Jam</label>
-                <input class="form-control" type="text" name="jam" value="<?=$jam?>">
-              </div>
-              <button type="submit" class="btn btn-primary">Kirim</button>
-            </form>
-          </div>
-        </main>
-      </div>
+              </form><!-- End General Form Elements -->	  	  
+      </section>
+      <!--Section: Minimal statistics cards-->
     </div>
+  </main>
+  <!--Main layout-->
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -55,4 +62,4 @@
     </script>
   
   </body>
-</html>	
+</html>

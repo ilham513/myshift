@@ -14,9 +14,10 @@ class M_admin extends CI_Model{
 		}
 
 		if($nama_tabel == 'waktu'){
+			$jam = $this->input->post('jam1'). ' - '.$this->input->post('jam2');
 			$data = array(
 				'hari' => $this->input->post('hari'),
-				'jam' => $this->input->post('jam')
+				'jam' => $jam
 			);	
 		}
 

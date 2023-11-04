@@ -5,50 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Ilham Setia BHakti">
 
-    <title>Jadwal Edit</title>
+    <title>Edit Jadwal</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?=base_url()?>css/dashboard.css" rel="stylesheet">
+    <link href="<?=base_url()?>vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- MDB -->
+	<link rel="stylesheet" href="<?=base_url()?>css/mdb.min.css" />
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="<?=base_url()?>css/admin.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
-	<?php $this->load->view('v_admin_comp/nav'); ?>
+	  <!--Main Navigation-->
+	  <header>
+		<?php $this->load->view('component/sidebar.php');?>
 
-    <div class="container-fluid">
-      <div class="row">
-	  <?php $this->load->view('v_admin_comp/side_bar'); ?>
+		<?php $this->load->view('component/navbar.php');?>	
+	  </header>
+	  <!--Main Navigation-->
+	  
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Jadwal Edit</h1>
-          </div>
+	 <!-- Section: Main chart -->
+		  <section class="mb-4">
+			<div class="card">
+			  <div class="card-header py-3">
+				<h5 class="mb-0"><strong>Edit Jadwal</strong></h5>
+			  </div>
+			  <div class="card-body">
+			  <!-- General Form Elements -->
+              <form action="<?=site_url('admin/jadwal_edit_go')?>" method="post">
+                <div class="row mb-3 d-none">
+                  <div class="col-sm-10">
+                    <input name="id" type="hidden" value="<?=$edit->id?>" class="form-control">
+                  </div>
+                </div>
+				
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Nama Karyawan</label>
+                  <div class="col-sm-10">
+                    <input name="nama_penyewa" type="text" value="<?=$edit->nama_penyewa?>" class="form-control">
+                  </div>
+                </div>
 
-          <div class="jumbotron">
-			<form action="<?= site_url('admin/jadwal_edit_go')?>" method="post">
-			<div class="form-group">
-					<label>id</label>
-					<input class="form-control" type="text" name="id" value="<?=$edit->id?>" readonly>
-				</div>
-				<div class="form-group">
-					<label>Nama Penyewa</label>
-					<input class="form-control" type="text" name="nama_penyewa" value="<?=$edit->nama_penyewa?>">
-				</div>
-				<div class="form-group">
-					<label>Jadwal Main</label><br/>
-          <?php foreach($waktu as $waktu):?>
-            <input class="form-check-input" type="radio" name="waktu_sewa"  value="<?=$waktu?>"><label class="form-check-label"><?=$waktu?></label><br/>
-          <?php endforeach; ?>
-				</div>
-				<button type="submit" class="btn btn-primary">Kirim</button>
-			</form>
-          </div>
-        </main>
-      </div>
+				<fieldset class="row mb-3">
+                  <legend class="col-form-label col-sm-2 pt-0">Waktu Sewa</legend>
+                  <div class="col-sm-10">
+                    <?php foreach($waktu as $waktu): ?>
+					<div class="form-check mb-1">
+                      <input class="form-check-input" type="radio" name="waktu_sewa" id="gridRadios1" value="<?=$waktu?>">
+                      <label class="form-check-label" for="gridRadios1"><?=$waktu?></label>
+                    </div>
+					<?php endforeach; ?>
+                  </div>
+                </fieldset>	
+				
+				
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label"></label>
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Ubah</button>
+                  </div>
+                </div>
+              </form><!-- End General Form Elements -->
+			  </div>
+			</div>
+		  </section>
+	  <!-- Section: Main chart -->
+	
     </div>
-
+  </main>
+  <!--Main layout-->
+  
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     
@@ -57,4 +88,4 @@
     </script>
   
   </body>
-</html>	
+</html>

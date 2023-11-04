@@ -5,58 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Ilham Setia BHakti">
 
-    <title>Jadwal</title>
+    <title>Jadwal Shift</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?=base_url()?>css/dashboard.css" rel="stylesheet">
+    <link href="<?=base_url()?>vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- MDB -->
+	<link rel="stylesheet" href="<?=base_url()?>css/mdb.min.css" />
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="<?=base_url()?>css/admin.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
-	<?php $this->load->view('v_admin_comp/nav'); ?>
+	  <!--Main Navigation-->
+	  <header>
+		<?php $this->load->view('component/sidebar.php');?>
 
-    <div class="container-fluid">
-      <div class="row">
-	  <?php $this->load->view('v_admin_comp/side_bar'); ?>
+		<?php $this->load->view('component/navbar.php');?>	
+	  </header>
+	  <!--Main Navigation-->
+	  
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Jadwal Shift</h1>
-          </div>
-
-          <div class="jumbotron">
-            <table class="table table-hover" id="sortTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Nama Karyawan</th>
-                  <th>Waktu Shift</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($jadwal as $jadwal): ?>
-                <tr>
-                  <td width="150">
-                    <?php echo $jadwal->nama_penyewa ?>
-                  </td>
-                  <td width="150">
-                    <?php echo $jadwal->waktu_sewa ?>
-                  </td>
-                  <td width="150">
-                    <a href="<?=site_url('admin/jadwal_edit/'.$jadwal->id)?>">Edit</a> | <a href="<?=site_url('admin/jadwal_hapus/'.$jadwal->id)?>">Hapus</a>
-                  </td>
-                </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-
-            <a href="<?=site_url("admin/jadwal_otomatis")?>"><button type="button" class="btn btn-success">Generete Jadwal</button> | <a href="<?=site_url("admin/jadwal_reset")?>"><button type="button" class="btn btn-danger">Reset Jadwal</button> | <a href="<?=site_url("admin/jadwal_satuan")?>"><button type="button" class="btn btn-primary">Input Satuan</button>
-          </div>
-        </main>
-      </div>
+	 <!-- Section: Main chart -->
+		  <section class="mb-4">
+			<div class="card">
+			  <div class="card-header py-3">
+				<h5 class="mb-0"><strong>Jadwal Shift</strong></h5>
+			  </div>
+			  <div class="card-body">
+				<div class="d-grid gap-2 mb-3 d-md-flex justify-content-md-end">
+				  <a href="<?=site_url("admin/jadwal_otomatis")?>"><button type="button" class="btn btn-success">Generete Jadwal</button> | <a href="<?=site_url("admin/jadwal_reset")?>"><button type="button" class="btn btn-danger">Reset Jadwal</button> 
+				  <!--a href="#"><button type="button" class="btn btn-primary">Input Satuan</button-->
+				</div>
+				
+				<table class="table align-middle mb-0 bg-white">
+				  <thead class="bg-light">
+					<tr>
+					  <th>Nama Karyawan</th>
+					  <th>Waktu Shift</th>
+					  <th>Actions</th>
+					</tr>
+				  </thead>
+				  <tbody>
+				  <?php foreach($array_jadwal as $jadwal): ?>
+					<tr>
+					  <td><?= $jadwal->nama_penyewa?></td>
+					  <td><?= $jadwal->waktu_sewa?></td>
+					  <td>
+						<a href="<?=site_url('admin/jadwal_edit/'.$jadwal->id)?>"><span class="fw-bold me-2 text-primary"><i class="fa-solid fa-pen-to-square"></i></span></a>
+						<a href="<?=site_url('admin/jadwal_hapus/'.$jadwal->id)?>"><span class="fw-bold text-danger"><i class="fa-solid fa-trash"></i></span></a>
+					  </td>
+					</tr>
+					<?php endforeach; ?>
+				  </tbody>
+				</table>	
+				
+					
+			  </div>
+			</div>
+		  </section>
+	  <!-- Section: Main chart -->
+	
     </div>
-
+  </main>
+  <!--Main layout-->
+  
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     

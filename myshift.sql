@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2023 at 06:26 AM
+-- Generation Time: Nov 04, 2023 at 10:48 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `myshift`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `absen`
+--
+
+CREATE TABLE `absen` (
+  `id_absen` int(255) NOT NULL,
+  `nama_karyawan` varchar(255) NOT NULL,
+  `timestamp_absen` timestamp NOT NULL DEFAULT current_timestamp(),
+  `lokasi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -52,24 +65,6 @@ CREATE TABLE `jadwal` (
   `waktu_sewa` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `jadwal`
---
-
-INSERT INTO `jadwal` (`id`, `nama_penyewa`, `waktu_sewa`) VALUES
-(1, 'M.U', 'Rabu, 08:00 - 10:30'),
-(2, 'MEDI', 'Jumat, 08:00 - 10:30'),
-(3, 'Bina R.', 'Senin, 14:00 - 16:30'),
-(4, 'Vortuna', 'Senin, 19:00 - 21:30 '),
-(5, 'Susis PBSI', 'Selasa, 11:00 - 13:30'),
-(6, 'Madank', 'Senin, 11:00 - 13:30'),
-(7, 'RW', 'Senin, 08:00 - 12:30'),
-(8, 'Bima', 'Selasa, 08:00 - 10:30'),
-(9, 'Bina R. Mom', 'Sabtu, 08:00 - 10:30'),
-(10, 'Pesona', 'Kamis, 08:00 - 10:30'),
-(11, 'Jono PBSI', 'Rabu, 11:00 - 13:30'),
-(12, 'Udin PBSI', 'Kamis, 11:00 - 13:30');
-
 -- --------------------------------------------------------
 
 --
@@ -87,15 +82,13 @@ CREATE TABLE `penyewa` (
 --
 
 INSERT INTO `penyewa` (`id`, `nama`, `no_telp`) VALUES
-(3, 'RW', '081204197641'),
-(4, 'Madank', '081354726722'),
+(4, 'Madank Voli', '081354726722'),
 (5, 'Bina R.', '081497326218'),
 (6, 'Vortuna', '085705665696'),
 (7, 'Bima', '089236441689'),
 (8, 'M.U', '081552963242'),
 (9, 'Pesona', '089967291906'),
-(10, 'MEDI', '-'),
-(11, 'Bina R. Mom', '-'),
+(10, 'MEDI', '08888'),
 (13, 'Susis PBSI', '089986647267'),
 (14, 'Jono PBSI', '08994775636'),
 (15, 'Udin PBSI', '089987152236');
@@ -141,11 +134,18 @@ INSERT INTO `waktu` (`id`, `hari`, `jam`) VALUES
 (22, 'Kamis', '19:00 - 21:30'),
 (23, 'Jumat', '19:00 - 21:30'),
 (24, 'Sabtu', '19:00 - 21:30'),
-(25, 'Minggu', '20:00 - 22:30');
+(25, 'Minggu', '20:00 - 22:30'),
+(27, 'Sabtu', '09:00 - 10:11');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `absen`
+--
+ALTER TABLE `absen`
+  ADD PRIMARY KEY (`id_absen`);
 
 --
 -- Indexes for table `admin`
@@ -177,6 +177,12 @@ ALTER TABLE `waktu`
 --
 
 --
+-- AUTO_INCREMENT for table `absen`
+--
+ALTER TABLE `absen`
+  MODIFY `id_absen` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
@@ -186,19 +192,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `penyewa`
 --
 ALTER TABLE `penyewa`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `waktu`
 --
 ALTER TABLE `waktu`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

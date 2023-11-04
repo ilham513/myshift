@@ -37,7 +37,7 @@
 			  </div>
 			  <div class="card-body">
 				<div class="d-grid gap-2 mb-3 d-md-flex justify-content-md-end">
-				  <a href="<?=site_url('kurir/add')?>"><button class="btn btn-success fw-bold" type="button">Tambah Karywan</button></a>
+				  <a href="<?=site_url('admin/input')?>"><button class="btn btn-success fw-bold" type="button">Tambah Karywan</button></a>
 				</div>
 				
 				<table class="table align-middle mb-0 bg-white">
@@ -56,8 +56,8 @@
 					  <td><?= $penyewa->nama ?></td>
 					  <td><?= $penyewa->no_telp ?></td>
 					  <td>
-						<a href="<?=site_url('kurir/edit/'.$penyewa->id)?>"><span class="fw-bold me-2 text-primary" onclick="return editchecked('##');"><i class="fa-solid fa-pen-to-square"></i></span></a>
-						<a href="<?=site_url('kurir/hapus/'.$penyewa->id)?>"><span class="fw-bold text-danger" onclick="return deletechecked('##');"><i class="fa-solid fa-trash"></i></span></a>
+						<a href="<?=site_url('admin/edit/'.$penyewa->id)?>"><span class="fw-bold me-2 text-primary" onclick="return editchecked('##');"><i class="fa-solid fa-pen-to-square"></i></span></a>
+						<a href="<?=site_url('admin/hapus/'.$penyewa->id)?>"><span class="fw-bold text-danger" onclick="return deletechecked('##');"><i class="fa-solid fa-trash"></i></span></a>
 					  </td>
 					</tr>
 					<?php endforeach; ?>
