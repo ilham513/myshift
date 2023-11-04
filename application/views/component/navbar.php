@@ -14,17 +14,7 @@
         </a>
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">
-          <!-- Avatar -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
-              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <img src="<?=base_url()?>img/admin.png" class="rounded-circle" height="28"
-                alt="" loading="lazy" />
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="<?=site_url('login/destroy')?>">Logout</a></li>
-            </ul>
-          </li>
+			<li><a href="<?=site_url('login/logout')?>">Logout</a></li>
         </ul>
       </div>
       <!-- Container wrapper -->

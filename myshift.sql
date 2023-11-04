@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2023 at 10:48 PM
+-- Generation Time: Nov 04, 2023 at 11:08 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -82,16 +82,21 @@ CREATE TABLE `penyewa` (
 --
 
 INSERT INTO `penyewa` (`id`, `nama`, `no_telp`) VALUES
-(4, 'Madank Voli', '081354726722'),
-(5, 'Bina R.', '081497326218'),
-(6, 'Vortuna', '085705665696'),
-(7, 'Bima', '089236441689'),
-(8, 'M.U', '081552963242'),
-(9, 'Pesona', '089967291906'),
-(10, 'MEDI', '08888'),
-(13, 'Susis PBSI', '089986647267'),
-(14, 'Jono PBSI', '08994775636'),
-(15, 'Udin PBSI', '089987152236');
+(2, 'ABDUL ROHMAN ', '3453453'),
+(3, 'ADHI NURALANUDIN', '5675675'),
+(4, 'ADITYA FRAYOGI ', '5675675'),
+(5, 'AHMAD MUBAROK ', '5675675'),
+(6, 'AHMAD NUR HIDAYATULLOH ', '5675675'),
+(7, 'AHMAD RIPAI', '5675675'),
+(8, 'AJI SATRIA', '5675675'),
+(9, 'ALDI HARYADI', '5675675'),
+(10, 'ANI AYULIA PUTRI ', '5675675'),
+(11, 'ANJUN SAPUTRA ', '5675675'),
+(12, 'ANNISA FEBRIANTI ', '5675675'),
+(13, 'ANTO SUGIANTO', '5675675'),
+(14, 'ARIE RIZALDI OKTORA ', '5675675'),
+(15, 'ASRIYANI', '5675675'),
+(16, 'BAKHTIARSO ', '5675675');
 
 -- --------------------------------------------------------
 
@@ -198,7 +203,7 @@ ALTER TABLE `jadwal`
 -- AUTO_INCREMENT for table `penyewa`
 --
 ALTER TABLE `penyewa`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `waktu`
