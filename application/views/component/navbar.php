@@ -10,7 +10,7 @@
 
         <!-- Brand -->
         <a class="navbar-brand" href="#">
-          <span class="navbar-brand ps-2 mb-0 h1">PT. Sasa Inti</span>
+          <span class="navbar-brand ps-2 mb-0 h1">PT Tasya Putry Mandiri</span>
         </a>
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">

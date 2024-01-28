@@ -52,7 +52,7 @@
                 </div>
 
 				<fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Waktu Sewa</legend>
+                  <legend class="col-form-label col-sm-2 pt-0">Pilih Waktu</legend>
                   <div class="col-sm-10">
                     <?php foreach($waktu as $waktu): ?>
 					<div class="form-check mb-1">

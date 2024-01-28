@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
     </form>
   </body>
 </html>

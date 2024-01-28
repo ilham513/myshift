@@ -27,7 +27,7 @@ t" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- General Form Elements -->
               <form action="<?=site_url('admin/input_waktu_go')?>" method="post">
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Pelajaran</label>
+                  <label class="col-sm-2 col-form-label">Hari</label>
                   <div class="col-sm-10">
                     <select name="hari" class="form-select" aria-label="Default select example">
 				    <option selected disabled>Pilih hari...</option>
